@@ -9,11 +9,35 @@ Comment.init(
     // define columns
     id: {
       type: DataTypes.INTEGER,
-      allowNull: false.valueOf,
+      allowNull: false,
       primaryKey: true,
       autoIncrement: true
     },
-
+    content: {
+      type: DataTypes.TEXT,
+    //   allowNull: false,
+    },
+    date: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+          model: 'user',
+          key: 'id',
+      },
+    },
+    post_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+          model: 'post',
+          key: 'id',
+      },
+    },
   },
   {
     sequelize,

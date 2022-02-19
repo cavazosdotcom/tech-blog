@@ -9,18 +9,22 @@ Post.init(
     // define columns
     id: {
       type: DataTypes.INTEGER,
-      allowNull: false.valueOf,
+      allowNull: false,
       primaryKey: true,
       autoIncrement: true
     },
     title: {
-
+      type: DataTypes.STRING,
+      allowNull: false,
     },
-    text: {
-
+    content: {
+      type: DataTypes.TEXT,
+    //   allowNull: false,
     },
-    posted_date: {
-
+    date: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
     user_id: {
       type: DataTypes.INTEGER,
