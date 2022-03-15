@@ -1,0 +1,37 @@
+
+<div class='p-5'>
+  <div class='card text-white bg-dark mb-3'>
+    <div class='card-header d-flex justify-content-between'>
+      <h2>Edit Post</h2>
+    </div>
+    <div class='card-body'>
+      <form id='create-post'>
+        <div class='mb-3'>
+          <h4>Current Title:</h4>
+          <p>{{title}}</p>
+          <label for='post-title' class='form-label'>Title</label>
+          <input type='input' class='form-control' id='post-title' aria-describedby='emailHelp' />
+        </div>
+        <div class='mb-3'>
+          <h4>Current Content:</h4>
+          <p>{{content}}</p>
+          <label for='content' class='form-label'>Content</label>
+          <textarea class='form-control' id='post-content' rows='3'></textarea>
+        </div>
+          
+        {{!-- <div class='d-grid gap-2'>
+          <a href="/" type='submit' class='btn btn-primary'>Create</a>
+        </div> --}}
+        
+        <div class='d-grid gap-2'>
+            <button type='submit' class='btn btn-primary edit' data-id='{{id}}'>Edit</button>
+            <button type='submit' class='btn btn-danger delete' data-id='{{id}}'>Delete</button>
+        </div>
+          
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<script src="/js/edit-post.js"></script>

@@ -1,0 +1,16 @@
+<div>
+  <h1 class="display-6 bg-secondary p-5 text-center">Tech Blog</h1>
+</div>
+
+{{#each posts as |post|}}
+    {{!-- <div class='d-grid gap-2 p-2'>
+            <button type='submit' class='btn btn-primary text-start p-3' data-id={{post.id}}>{{post.title}}</button>
+    </div> --}}
+
+    <div class='d-grid gap-2 p-2'>
+            {{!-- <button type='submit' class='btn btn-primary text-start p-3' data-id={{post.id}}>{{post.title}}</button> --}}
+            <a href="/posts/{{post.id}}" class='btn btn-primary text-start p-4'>{{post.title}}</a>
+    </div>
+
+
+{{/each}}
