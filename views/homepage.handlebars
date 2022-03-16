@@ -5,12 +5,14 @@
 {{#each posts as |post|}}
   <div class="row justify-content-center">
     <div class="col-md-11 py-3">
-      <div class="card h-100 shadow">
-        <h2 class="card-header">{{post.title}}</h2>
-        <div class="card-body">
-          {{post.content}}
-        </div>
-      </div>  
+      <a href="posts/{{post.id}}/comments"> 
+        <div class="card h-100 shadow">
+          <h2 class="card-header">{{post.title}}</h2>
+          <div class="card-body">
+            {{post.content}}
+          </div>
+        </div>  
+      </a> 
     </div>
   </div>
 {{/each}}
