@@ -4,7 +4,7 @@
 
 {{!-- {{#each posts as |post|}} --}}
   <div class="row justify-content-center">
-    <div class="col-md-11 py-3">
+    <div class="col-md-9 py-1">
       
       <div class="card h-100 shadow">
         <h2 class="card-header">{{post.title}}</h2>
@@ -12,7 +12,7 @@
           <p>{{post.content}}</p>
           <div class="mb-0 d-flex justify-content-between">
             <p class="mb-0">- {{post.user.name}}</p>
-            <p class="mb-0">{{post.date}}</p>
+            <p class="mb-0">{{format_date post.date}}</p>
           </div>
           {{!-- {{post.date}} --}}
         </div>
@@ -24,7 +24,7 @@
               <p class="ms-5">{{comment.content}}</p>
               <div class="mb-0 d-flex justify-content-between">
                 <p class="ms-5 mb-0">- {{comment.user.name}}</p>
-                <p class="ms-5 mb-0">{{comment.date}}</p>
+                <p class="ms-5 mb-0">{{format_date comment.date}}</p>
               </div>
             </div>
           </div>
@@ -36,7 +36,7 @@
 
     </div>
   </div>
-  <div class="card col-md-10 mx-auto text-center">
+  <div class="card col-md-9 mx-auto text-center">
   <div class='card-body'>
     <form id='create-comment' data-id="{{post.id}}">
       <div class='mb-3'>
@@ -51,3 +51,4 @@
   </div>
 
 <script src="/js/create-comment.js"></script>
+{{!-- <script src='/utils/helpers'></script> --}}
