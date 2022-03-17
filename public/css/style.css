@@ -1,0 +1,19 @@
+body {
+    background-color: black;
+}
+
+.card {
+    border: none;
+}
+
+.card-header {
+    background-color: #201F23;
+    color: white;
+    border: none;
+}
+
+.card-body {
+    background-color: #1A1A1A;
+    color: white;
+    border: none;
+}

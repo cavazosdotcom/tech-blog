@@ -1,11 +1,11 @@
 <div>
-  <h1 class="bg-secondary p-5 text-center">Tech Blog</h1>
+  <h1 class="bg-danger p-5 text-center">Tech Blog</h1>
 </div>
 
 {{#each posts as |post|}}
   <div class="row justify-content-center">
     <div class="col-md-9 py-1">
-      <a href="posts/{{post.id}}/comments"> 
+      <a href="posts/{{post.id}}/comments" class="text-decoration-none"> 
         <div class="card h-100 shadow">
           <h2 class="card-header">{{post.title}}</h2>
           <div class="card-body">
