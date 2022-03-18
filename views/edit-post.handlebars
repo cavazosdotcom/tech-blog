@@ -19,8 +19,8 @@
         </div> --}}
         
         <div class='d-grid gap-2'>
-            <button type='submit' class='btn btn-primary edit' data-id='{{id}}'>Edit</button>
-            <button type='submit' class='btn btn-danger delete' data-id='{{id}}'>Delete</button>
+            <button type='submit' class='btn btn-primary edit' data-id='{{post.id}}'>Edit</button>
+            <button type='submit' class='btn btn-danger delete' data-id='{{post.id}}'>Delete</button>
         </div>
           
       </form>
@@ -34,7 +34,7 @@
     
     <div class="card h-100 shadow">
       <h2 class="card-header">{{post.title}}</h2>
-      <div class="card-body border">
+      <div class="card-body border-bottom border-dark">
         <p>{{post.content}}</p>
         <div class="mb-0 d-flex justify-content-between">
           <p class="mb-0">- {{post.user.name}}</p>
@@ -45,7 +45,7 @@
   {{!-- {{/each}} --}}
       {{#each comments as |comment|}}
       {{!-- <div class="card h-100 shadow"> --}}
-        <div class="card-body border">
+        <div class="card-body border-bottom border-dark">
           <div class="border-start border-3">
             <p class="ms-5">{{comment.content}}</p>
             <div class="mb-0 d-flex justify-content-between">

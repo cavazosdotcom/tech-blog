@@ -1,5 +1,5 @@
 <div>
-  <h1 class="bg-danger p-5 text-center">Tech Blog</h1>
+  <h1 class="bg-light-dark p-5 text-center text-white">Tech Blog</h1>
 </div>
 
 {{!-- {{#each posts as |post|}} --}}
@@ -8,7 +8,7 @@
       
       <div class="card h-100 shadow">
         <h2 class="card-header">{{post.title}}</h2>
-        <div class="card-body">
+        <div class="card-body border-bottom border-dark border-2">
           <p>{{post.content}}</p>
           <div class="mb-0 d-flex justify-content-between">
             <p class="mb-0">- {{post.user.name}}</p>
@@ -19,7 +19,7 @@
 
         {{#each comments as |comment|}}
         {{!-- <div class="card h-100 shadow"> --}}
-          <div class="card-body">
+          <div class="card-body border-bottom border-dark border-2">
             <div class="border-start border-3">
               <p class="ms-5">{{comment.content}}</p>
               <div class="mb-0 d-flex justify-content-between">
@@ -40,7 +40,7 @@
   <div class='card-body'>
     <form id='create-comment' data-id="{{post.id}}">
       <div class='mb-3'>
-        <label for='content' class='form-label'>Create New Comment</label>
+        <label for='content' class='form-label'>Comment</label>
         <textarea class='form-control' id='comment-content' rows='3'></textarea>
       </div>
 
