@@ -1,13 +1,13 @@
 <div>
-  <h1 class="bg-light-dark p-5 text-center text-white">Tech Blog</h1>
+  <h1 class="bg-dark p-5 text-center text-white">Tech Blog</h1>
 </div>
 
 {{!-- {{#each posts as |post|}} --}}
-  <div class="row justify-content-center">
-    <div class="col-md-9 py-1">
+  {{!-- <div class="row justify-content-center"> --}}
+    <div class="col-md-9 py-1 mx-auto">
       
       <div class="card h-100 shadow">
-        <h2 class="card-header">{{post.title}}</h2>
+        <h2 class="card-header bg-dark">{{post.title}}</h2>
         <div class="card-body border-bottom border-dark border-2">
           <p>{{post.content}}</p>
           <div class="mb-0 d-flex justify-content-between">
@@ -35,7 +35,9 @@
 
 
     </div>
-  </div>
+  {{!-- </div> --}}
+
+{{#if logged_in}}
   <div class="card col-md-9 mx-auto text-center">
   <div class='card-body'>
     <form id='create-comment' data-id="{{post.id}}">
@@ -49,6 +51,10 @@
       </div>
     </form>
   </div>
+{{else}}
+<div class="text-center mb-1">
+  <a class="btn btn-primary" href="/login">Log in to Comment!</a>
+</div>
+{{/if}}
 
 <script src="/js/create-comment.js"></script>
-{{!-- <script src='/utils/helpers'></script> --}}

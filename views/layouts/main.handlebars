@@ -13,9 +13,9 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/">Dashboard</a>
+          <a class="navbar-brand text-white" href="/">Dashboard</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -25,10 +25,10 @@
                 <a class="nav-link active" aria-current="page" href="/">Dashboard</a>
               </li> --}}
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/profile">Profile</a>
+                <a class="nav-link active text-white" aria-current="page" href="/profile">Profile</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/posts">New Post</a>
+                <a class="nav-link active text-white" aria-current="page" href="/posts">New Post</a>
               </li>
               {{!-- <li class="nav-item">
                 <a class="nav-link active" href="#">Login</a>
@@ -38,22 +38,26 @@
               </li> --}}
               {{#if logged_in}}
               <li class="nav-item">
-                  <a class="nav-link" id="logout" href="#">Logout</a>  
+                  <a class="nav-link text-white" id="logout" href="#">Logout</a>  
               </li>
               {{else}}
               <li class="nav-item">
-                  <a class="nav-link" href="/login">Log In</a>  
+                  <a class="nav-link text-white" href="/login">Log In</a>  
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="/register">Sign Up</a>  
+                  <a class="nav-link text-white" href="/register">Sign Up</a>  
               </li>
               {{/if}}
             </ul>
           </div>
         </div>
       </nav>
-    
+  <main>
     {{{ body }}}
+  </main> 
+  <footer class="p-5 bg-dark text-center text-white page-containter content-wrap footer">
+    Created by <a href="https://github.com/cavazosdotcom/" class="text-decoration-none text-white">Chris Cavazos</a>
+  </footer>
 
 </body>
 

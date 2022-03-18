@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Post, Comment, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     // Get all posts and JOIN with user data
     const postData = await Post.findAll({
@@ -90,7 +90,7 @@ router.get('/posts/:id', withAuth, async (req, res) => {
 });
 
 
-router.get('/posts/:id/comments', withAuth, async (req, res) => {
+router.get('/posts/:id/comments', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
     const postData = await Post.findByPk(req.params.id, {

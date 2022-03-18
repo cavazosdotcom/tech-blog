@@ -1,21 +1,24 @@
 <div>
-  <h1 class="bg-light-dark p-5 text-center text-white">Tech Blog</h1>
+  <h1 class="bg-dark p-5 text-center text-white">Tech Blog</h1>
 </div>
 
 {{#each posts as |post|}}
-  <div class="row justify-content-center">
-    <div class="col-md-9 py-1">
-      <a href="posts/{{post.id}}/comments" class="text-decoration-none"> 
-        <div class="card h-100 shadow">
-          <h2 class="card-header">{{post.title}}</h2>
-          <div class="card-body">
-            {{post.content}}
-          </div>
-        </div>  
-      </a> 
-    </div>
+  <div class="col-md-9 py-1 mx-auto">
+    <a href="posts/{{post.id}}/comments" class="text-decoration-none"> 
+      <div class="card h-100 shadow">
+        <h2 class="card-header bg-dark">{{post.title}}</h2>
+        <div class="card-body">
+          {{post.content}}
+        </div>
+      </div>  
+    </a> 
   </div>
-
 {{/each}}
 
+{{#if logged_in}}
 <a href="/posts"><i class="bi bi-plus-circle-fill icon fix-bottom-right"></i></a>
+{{else}}
+<div class="text-center mb-1">
+  <a class="btn btn-primary" href="/login">Log in to Post!</a>
+</div>
+{{/if}}

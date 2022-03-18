@@ -6,6 +6,9 @@
 
 body {
     background-color: black;
+    position: relative;
+    /* padding-bottom: 2rem; */
+    min-height: 100vh;
 }
 
 .card {
@@ -13,7 +16,7 @@ body {
 }
 
 .card-header {
-    background-color: var(--light-dark);
+    /* background-color: var(--light-dark); */
     color: white;
     border: none;
 }
@@ -38,7 +41,7 @@ body {
 }
 
 .icon {
-    color: red;
+    color: skyblue;
     font-size: 4rem;
     position: fixed;
     bottom: 2%;
@@ -51,3 +54,4 @@ body {
     bottom: 2.5%;
     right: 5.5%
 }
+

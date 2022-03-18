@@ -1,6 +1,6 @@
 <div class='p-5'>
   <div class='card text-white bg-dark mb-3'>
-    <div class='card-header d-flex justify-content-between'>
+    <div class='card-header bg-dark d-flex justify-content-between'>
       <h2>Edit Post</h2>
     </div>
     <div class='card-body'>
@@ -29,11 +29,11 @@
 </div>
 
 {{!-- {{#each posts as |post|}} --}}
-<div class="row justify-content-center">
-  <div class="col-md-11 py-3">
+
+  <div class="col-md-11 py-3 mx-auto">
     
     <div class="card h-100 shadow">
-      <h2 class="card-header">{{post.title}}</h2>
+      <h2 class="card-header bg-dark">{{post.title}}</h2>
       <div class="card-body border-bottom border-dark">
         <p>{{post.content}}</p>
         <div class="mb-0 d-flex justify-content-between">
@@ -61,7 +61,6 @@
 
 
   </div>
-</div>
 
 <script src="/js/edit-post.js"></script>
 {{!-- <script src='/utils/helpers'></script> --}}
