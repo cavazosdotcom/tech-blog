@@ -21,7 +21,7 @@ Post.init(
     // content has to be text, can't be null
     content: {
       type: DataTypes.TEXT,
-      allowNull: false,
+      // allowNull: false,
     },
     // date has to be a date, default set to time of comment, can't be null
     date: {
