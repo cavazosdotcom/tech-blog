@@ -3,16 +3,9 @@
 </div>
 
 {{#each posts as |post|}}
-    {{!-- <div class='d-grid gap-2 p-2'>
-            <button type='submit' class='btn btn-primary text-start p-3' data-id={{post.id}}>{{post.title}}</button>
-    </div> --}}
-
     <div class='d-grid gap-2 p-2'>
-            {{!-- <button type='submit' class='btn btn-primary text-start p-3' data-id={{post.id}}>{{post.title}}</button> --}}
             <a href="/posts/{{post.id}}" class='btn btn-danger text-start p-4'>{{post.title}}</a>
     </div>
-
-
 {{/each}}
 
 <a href="/posts"><i class="bi bi-plus-circle-fill icon fix-bottom-right"></i></a>

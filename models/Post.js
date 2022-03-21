@@ -13,19 +13,23 @@ Post.init(
       primaryKey: true,
       autoIncrement: true
     },
+    // title has to be a string, default length set to 255 characters, can't be null
     title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    // content has to be text, can't be null
     content: {
       type: DataTypes.TEXT,
-    //   allowNull: false,
+      allowNull: false,
     },
+    // date has to be a date, default set to time of comment, can't be null
     date: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
+    // integer referencing the User model, id property
     user_id: {
       type: DataTypes.INTEGER,
       references: {

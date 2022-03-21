@@ -12,55 +12,40 @@
         <div class='mb-3'>
           <label for='content' class='form-label'>Content</label>
           <textarea class='form-control' id='post-content' rows='3'></textarea>
-        </div>
-          
-        {{!-- <div class='d-grid gap-2'>
-          <a href="/" type='submit' class='btn btn-primary'>Create</a>
-        </div> --}}
-        
+        </div>      
         <div class='d-grid gap-2'>
             <button type='submit' class='btn btn-primary edit' data-id='{{post.id}}'>Edit</button>
             <button type='submit' class='btn btn-danger delete' data-id='{{post.id}}'>Delete</button>
         </div>
-          
       </form>
     </div>
   </div>
 </div>
 
-{{!-- {{#each posts as |post|}} --}}
-
-  <div class="col-md-11 py-3 mx-auto">
-    
-    <div class="card h-100 shadow">
-      <h2 class="card-header bg-dark">{{post.title}}</h2>
-      <div class="card-body border-bottom border-dark">
-        <p>{{post.content}}</p>
-        <div class="mb-0 d-flex justify-content-between">
-          <p class="mb-0">- {{post.user.name}}</p>
-          <p class="mb-0">{{format_date post.date}}</p>
-        </div>
-        {{!-- {{post.date}} --}}
+<div class="col-md-11 py-3 mx-auto">
+  <div class="card h-100 shadow">
+    <h2 class="card-header bg-dark">{{post.title}}</h2>
+    <div class="card-body border-bottom border-dark">
+      <p>{{post.content}}</p>
+      <div class="mb-0 d-flex justify-content-between">
+        <p class="mb-0">- {{post.user.name}}</p>
+        <p class="mb-0">{{format_date post.date}}</p>
       </div>
-  {{!-- {{/each}} --}}
-      {{#each comments as |comment|}}
-      {{!-- <div class="card h-100 shadow"> --}}
-        <div class="card-body border-bottom border-dark">
-          <div class="border-start border-3">
-            <p class="ms-5">{{comment.content}}</p>
-            <div class="mb-0 d-flex justify-content-between">
-              <p class="ms-5 mb-0">- {{comment.user.name}}</p>
-              <p class="ms-5 mb-0">{{format_date comment.date}}</p>
-            </div>
+    </div>
+
+    {{#each comments as |comment|}}
+      <div class="card-body border-bottom border-dark">
+        <div class="border-start border-3">
+          <p class="ms-5">{{comment.content}}</p>
+          <div class="mb-0 d-flex justify-content-between">
+            <p class="ms-5 mb-0">- {{comment.user.name}}</p>
+            <p class="ms-5 mb-0">{{format_date comment.date}}</p>
           </div>
         </div>
-      {{!-- </div> --}}
-      {{/each}}
-
-    </div>  
-
-
-  </div>
+      </div>
+    {{/each}}
+  </div>  
+</div>
 
 <script src="/js/edit-post.js"></script>
-{{!-- <script src='/utils/helpers'></script> --}}
+

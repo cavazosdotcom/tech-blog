@@ -34,9 +34,6 @@ router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { name: req.body.name} });
 
-    // console.log(userData);
-    console.log(req.body.name)
-
     if (!userData) {
       res
         .status(400)
@@ -45,9 +42,6 @@ router.post('/login', async (req, res) => {
     }
 
     const validPassword = await userData.checkPassword(req.body.password);
-    console.log(req.body.password);
-    console.log(validPassword);
-
 
     if (!validPassword) {
       res

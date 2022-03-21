@@ -2,40 +2,39 @@
   <h1 class="bg-dark p-5 text-center text-white">Tech Blog</h1>
 </div>
 
-{{!-- {{#each posts as |post|}} --}}
-  {{!-- <div class="row justify-content-center"> --}}
-    <div class="col-md-9 py-1 mx-auto">
+
+<div class="col-md-9 py-1 mx-auto">
+  
+  <div class="card h-100 shadow">
+    <h2 class="card-header bg-dark">{{post.title}}</h2>
+    <div class="card-body border-bottom border-dark border-2">
+      <p>{{post.content}}</p>
+      <div class="mb-0 d-flex justify-content-between">
+        <p class="mb-0">- {{post.user.name}}</p>
+        <p class="mb-0">{{format_date post.date}}</p>
+      </div>
       
-      <div class="card h-100 shadow">
-        <h2 class="card-header bg-dark">{{post.title}}</h2>
-        <div class="card-body border-bottom border-dark border-2">
-          <p>{{post.content}}</p>
-          <div class="mb-0 d-flex justify-content-between">
-            <p class="mb-0">- {{post.user.name}}</p>
-            <p class="mb-0">{{format_date post.date}}</p>
-          </div>
-          {{!-- {{post.date}} --}}
-        </div>
-
-        {{#each comments as |comment|}}
-        {{!-- <div class="card h-100 shadow"> --}}
-          <div class="card-body border-bottom border-dark border-2">
-            <div class="border-start border-3">
-              <p class="ms-5">{{comment.content}}</p>
-              <div class="mb-0 d-flex justify-content-between">
-                <p class="ms-5 mb-0">- {{comment.user.name}}</p>
-                <p class="ms-5 mb-0">{{format_date comment.date}}</p>
-              </div>
-            </div>
-          </div>
-        {{!-- </div> --}}
-        {{/each}}
-
-      </div>  
-
-
     </div>
-  {{!-- </div> --}}
+
+    {{#each comments as |comment|}}
+    
+      <div class="card-body border-bottom border-dark border-2">
+        <div class="border-start border-3">
+          <p class="ms-5">{{comment.content}}</p>
+          <div class="mb-0 d-flex justify-content-between">
+            <p class="ms-5 mb-0">- {{comment.user.name}}</p>
+            <p class="ms-5 mb-0">{{format_date comment.date}}</p>
+          </div>
+        </div>
+      </div>
+    
+    {{/each}}
+
+  </div>  
+
+
+</div>
+  
 
 {{#if logged_in}}
   <div class="card col-md-9 mx-auto text-center">

@@ -1,3 +1,4 @@
+// Boiler plate code to configure the connection with sequlize to JAWSDB
 const Sequelize = require('sequelize');
 require('dotenv').config();
 

@@ -1,11 +1,14 @@
+// necessary requires
 const router = require('express').Router();
 const { Post, Comment, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
+// Get route for insomnia seed testing
 router.get('/', async (req, res) => {
-    // res.json({ success: true, hit: "Get Category" });
+  // res.json({ success: true, hit: "Get Category" });
   try {
+    // get all Post and JOIN Comment
     const postData = await Post.findAll({
         include: [{ model: Comment }]
     });
@@ -17,22 +20,26 @@ router.get('/', async (req, res) => {
   }
 });
 
-// router.post('/new', withAuth, (req, res) => {
-//   res.render('create-post')
-// });
+
+// Post route, creates a post based on the users req.body
+// with logged in authorization, asynchrously connect to the 'posts/' route and try an await to create a new Post from the Post model
+
 router.post('/', withAuth, async (req, res) => {
   try {
+    // post new Post
     const newPost = await Post.create({
       ...req.body,
       user_id: req.session.user_id,
     });
-
+    // if the await is successful, then return json form of newPost
     res.status(200).json(newPost);
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
+
+// Post route, creates a comment based on the users req.body, matches the corect post_id and user_id  
 router.post('/:id/comments', withAuth, async (req, res) => {
   try {
     const newPost = await Comment.create({
@@ -48,8 +55,10 @@ router.post('/:id/comments', withAuth, async (req, res) => {
 });
 
 
+// Put route, edits the post bosed on the post's id
 router.put('/:id', withAuth, async (req, res) => {
   try {
+    // 
     const postData = await Post.update(req.body, {
       where: {
         id: req.params.id,
@@ -63,6 +72,7 @@ router.put('/:id', withAuth, async (req, res) => {
 });
 
 
+// delete route, 
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const PostData = await Post.destroy({
