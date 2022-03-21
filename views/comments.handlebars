@@ -4,7 +4,6 @@
 
 
 <div class="col-md-9 py-1 mx-auto">
-  
   <div class="card h-100 shadow">
     <h2 class="card-header bg-dark">{{post.title}}</h2>
     <div class="card-body border-bottom border-dark border-2">
@@ -13,11 +12,9 @@
         <p class="mb-0">- {{post.user.name}}</p>
         <p class="mb-0">{{format_date post.date}}</p>
       </div>
-      
     </div>
 
     {{#each comments as |comment|}}
-    
       <div class="card-body border-bottom border-dark border-2">
         <div class="border-start border-3">
           <p class="ms-5">{{comment.content}}</p>
@@ -27,15 +24,10 @@
           </div>
         </div>
       </div>
-    
     {{/each}}
-
-  </div>  
-
-
+  </div> 
 </div>
   
-
 {{#if logged_in}}
   <div class="card col-md-9 mx-auto text-center">
   <div class='card-body'>
@@ -44,7 +36,6 @@
         <label for='content' class='form-label'>Comment</label>
         <textarea class='form-control' id='comment-content' rows='3'></textarea>
       </div>
-
       <div class='d-grid gap-2'>
         <button type='submit' class='btn btn-primary'>Create</button>
       </div>

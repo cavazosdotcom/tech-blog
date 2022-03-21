@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Post, Comment, User } = require('../models');
 const withAuth = require('../utils/auth');
 
+// takes user to the homepage
 router.get('/', async (req, res) => {
   try {
     // Get all posts and JOIN with user data
@@ -31,7 +32,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-
+// takes user to create a new post, can only get to page to post if logged in
 router.get('/posts', withAuth, async (req, res) => {
   try {
   const postData = await Post.findAll({
@@ -54,7 +55,7 @@ router.get('/posts', withAuth, async (req, res) => {
 });
 
 
-
+// takes user to specific post with the matching id to edit, can only get here if logged in
 router.get('/posts/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
@@ -89,7 +90,7 @@ router.get('/posts/:id', withAuth, async (req, res) => {
   }
 });
 
-
+// takes the user to individual post with matching id and corresponding comments with that matching post_id
 router.get('/posts/:id/comments', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
