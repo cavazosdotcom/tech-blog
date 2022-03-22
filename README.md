@@ -47,6 +47,17 @@ express-session
 
 There are currently no tests on this application
 
+
+# Future Development
+
+For future plans, I hope to add routes to edit and delete comments as well. A user can already do this with posts but not comments. I want to make a footer than can stick to the bottom of the page even with scroll and with not enough content to fill the viewport. 
+
+Eventually I plan on adding the ability to comment on comments to further the discussion possibilities with this app.
+
+General styling is needed as well to clean up the color and asthetic of the site.
+
+I also want to add a feature that will label edited posts as edited.
+
 # Questions
 If you have any questions feel free to contact me at either [Github](https://github.com/cavazosdotcom), or [cavazosdotcom@gmail.com](cavazosdotcom@gmail.com)  
 
